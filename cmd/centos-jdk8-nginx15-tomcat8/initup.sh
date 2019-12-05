@@ -11,6 +11,7 @@ echo "soft and server filepath creating ……"
 mkdir -p /export/soft/
 mkdir -p /export/servers/
 
+exit 0;
 cd /export/soft/
 echo "jdk init start ######"
 echo "jdk download start ……"
