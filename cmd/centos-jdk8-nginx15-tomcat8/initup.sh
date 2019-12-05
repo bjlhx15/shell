@@ -7,11 +7,14 @@ echo "file and proc open number setting……"
 echo -e "\n * soft nofile 65535 \n * hard nofile 65535 \n * soft nproc 65535 \n * hard nproc 65535">>/etc/security/limits.conf
 
 
+
 echo "soft and server filepath creating ……"
 mkdir -p /export/soft/
 mkdir -p /export/servers/
+useradd admin
 
-exit 0;
+#exit 0;
+
 cd /export/soft/
 echo "jdk init start ######"
 echo "jdk download start ……"
@@ -36,7 +39,7 @@ echo "jdk profile end ……"
 
 echo "jdk init end ######"
 
-
+exit ;
 echo "tomcat8 init start ######"
 echo "tomcat8 download start ……"
 wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.30/bin/apache-tomcat-8.0.30.tar.gz
