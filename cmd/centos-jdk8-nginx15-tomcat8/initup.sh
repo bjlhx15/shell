@@ -6,8 +6,6 @@ source env-conf.sh
 echo "file and proc open number setting……"
 echo -e "\n * soft nofile 65535 \n * hard nofile 65535 \n * soft nproc 65535 \n * hard nproc 65535">>/etc/security/limits.conf
 
-
-
 echo "soft and server filepath creating ……"
 mkdir -p /export/soft/
 mkdir -p /export/servers/
@@ -30,11 +28,11 @@ mv ${jdk_name} /export/servers/${jdk_name}
 echo "jdk install end ……"
 
 echo "jdk profile start ……"
-echo -e "JAVA_HOME=/export/servers/${jdk_name}
-JRE_HOME=$JAVA_HOME/jre
-CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
-PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
-export JAVA_HOME JRE_HOME CLASS_PATH PATH" >>/etc/profile
+echo -e "\n\n export JAVA_HOME=/export/servers/${jdk_name}
+export CLASSPATH=.:${JAVA_HOME}/jre/lib/rt.jar:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar
+export PATH=$PATH:${JAVA_HOME}/bin" >>/etc/profile
+. /etc/profile
+cat /etc/profile
 echo "jdk profile end ……"
 
 echo "jdk init end ######"
