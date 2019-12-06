@@ -91,15 +91,19 @@ function nginxSetting() {
 
     tar -zvxf nginx-1.15.12.tar.gz
     rm -rf /export/servers/nginx
-    mv nginx-1.15.12 /export/servers/nginx
-    # 拷贝配置
-    mv /export/servers/nginx/conf/nginx.conf /export/servers/nginx/conf/nginx.conf.default
-    cp ${project_path}/nginx.conf /export/servers/nginx/conf/nginx.conf
+#    mv nginx-1.15.12 /export/servers/nginx
 
-    cd /export/servers/nginx
+    mkdir -p /export/servers/nginx
+    mkdir -p /export/servers/nginx/run
+
+    cd /export/soft/nginx-1.15.12
     # 指定目录安装
     ./configure --prefix=/export/servers/nginx --conf-path=/export/servers/nginx/conf/nginx.conf
     make && make install
+
+    # 拷贝配置
+    mv /export/servers/nginx/conf/nginx.conf /export/servers/nginx/conf/nginx.conf.default
+    cp ${project_path}/nginx.conf /export/servers/nginx/conf/nginx.conf
     mkdir -p /export/servers/nginx/run
     echo "nginx install end ……"
     echo "nginx init end ######"
