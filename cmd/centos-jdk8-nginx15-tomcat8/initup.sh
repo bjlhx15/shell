@@ -101,6 +101,7 @@ function nginxSetting() {
     mkdir -p /export/servers/nginx/run
     echo "nginx install end ……"
     # 拷贝配置
+    mv /export/servers/nginx/conf/nginx.conf /export/servers/nginx/conf/nginx.conf.default
     cp ${project_path}/nginx.conf /export/servers/nginx/conf/nginx.conf
     echo "nginx init end ######"
 }
