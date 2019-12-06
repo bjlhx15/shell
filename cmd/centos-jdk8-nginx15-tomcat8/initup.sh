@@ -16,8 +16,6 @@ mkdir -p /export/soft/
 mkdir -p /export/servers/
 useradd admin
 
-#exit 0;
-
 cd /export/soft/
 echo "jdk init start ######"
 echo "jdk download start ……"
@@ -27,13 +25,14 @@ mv /export/soft/jdk-8u231-linux-x64.tar.gz /export/soft/
 echo "jdk download end ……"
 
 echo "jdk install start ……"
-tar -zvxf ${jdk_path}
+tar -zvxf cd${jdk_path}
 jdk_name=`echo jdk*_*`
+rm -rf /export/servers/${jdk_name}
 mv ${jdk_name} /export/servers/${jdk_name}
 echo "jdk install end ……"
 
 echo "jdk profile start ……"
-if [ `grep -c 'export JAVA_HOME=/export/servers/${jdk_name}' /etc/profile` -eq 0 ];then
+if [ `grep -c 'export JAVA_HOME=/export/servers' /etc/profile` -eq 0 ];then
     echo 'not have'
     echo -e "\n\nexport JAVA_HOME=/export/servers/${jdk_name}
 export CLASSPATH=.:${JAVA_HOME}/jre/lib/rt.jar:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar
@@ -45,7 +44,6 @@ fi
 echo "jdk profile end ……"
 echo "jdk init end ######"
 
-exit ;
 echo "tomcat8 init start ######"
 echo "tomcat8 download start ……"
 wget https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.30/bin/apache-tomcat-8.0.30.tar.gz
@@ -53,10 +51,10 @@ echo "tomcat8 download end ……"
 
 echo "tomcat8 install start ……"
 tar -zvxf apache-tomcat-8.0.30.tar.gz
+rm -rf /export/servers/tomcat8.0.30
 mv apache-tomcat-8.0.30 /export/servers/tomcat8.0.30
 echo "tomcat8 install end ……"
 echo "tomcat8 init end ######"
-
 
 echo "nginx init start ######"
 echo "nginx download start ……"
@@ -68,6 +66,7 @@ yum install gcc-c++
 yum -y install pcre*
 yum -y install openssl*
 tar -zvxf nginx-1.15.12.tar.gz
+rm -rf /export/servers/nginx-1.15.12
 mv nginx-1.15.12 /export/servers/nginx-1.15.12
 cd /export/servers/nginx-1.15.12
 # 指定目录安装
