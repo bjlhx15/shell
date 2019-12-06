@@ -16,6 +16,7 @@ function fileAndProcSetting(){
 function dirCreate(){
     mkdir -p /export/soft/
     mkdir -p /export/servers/
+    cd /export/soft/
     useradd admin
 }
 function jdk_install() {
@@ -105,6 +106,9 @@ function nginx_install() {
     mkdir -p $1/run
     rm -rf nginx-1.15.12
     echo "nginx install end ……"
+    chown root.root $1/sbin/nginx
+    chmod 755 $1/sbin/nginx
+    chmod u+s $1/sbin/nginx
     echo "nginx init end ######"
 }
 
