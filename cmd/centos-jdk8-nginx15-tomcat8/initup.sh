@@ -18,7 +18,8 @@ function dirCreate(){
     mkdir -p /export/servers/
     useradd admin
 }
-function jdkSetting() {
+function jdk_install() {
+    mkdir -p /export/soft/
     cd /export/soft/
     echo "jdk init start ######"
     echo "jdk download start ……"
@@ -37,8 +38,8 @@ function jdkSetting() {
     jdk_tar_name=`echo jdk-*.tar.gz`
     tar -zvxf ${jdk_tar_name}
     jdk_name=`echo jdk*_*`
-    rm -rf /export/servers/${jdk_name}
-    mv ${jdk_name} /export/servers/${jdk_name}
+    rm -rf $1/${jdk_name}
+    mv ${jdk_name} $1/${jdk_name}
     echo "jdk install end ……"
 
     echo "jdk profile start ……"
@@ -55,8 +56,7 @@ function jdkSetting() {
     echo "jdk init end ######"
 }
 
-function tomcatSetting() {
-    cd /export/soft/
+function tomcat_install() {
     echo "tomcat8 init start ######"
     if [ -e apache-tomcat-8.0.30.tar.gz ] ; then
         echo 'exist apache-tomcat-8.0.30.tar.gz'
@@ -68,13 +68,12 @@ function tomcatSetting() {
 
     echo "tomcat8 install start ……"
     tar -zvxf apache-tomcat-8.0.30.tar.gz
-    rm -rf /export/servers/tomcat8.0.30
-    mv apache-tomcat-8.0.30 /export/servers/tomcat8.0.30
+    rm -rf $1
+    mv apache-tomcat-8.0.30 $1
     echo "tomcat8 install end ……"
     echo "tomcat8 init end ######"
 }
-function nginxSetting() {
-    cd /export/soft/
+function nginx_install() {
     echo "nginx init start ######"
     if [ -e nginx-1.15.12.tar.gz ]; then
         echo "exist nginx-1.15.12.tar.gz"
@@ -90,21 +89,21 @@ function nginxSetting() {
     yum -y install openssl*
 
     tar -zvxf nginx-1.15.12.tar.gz
-    rm -rf /export/servers/nginx
-#    mv nginx-1.15.12 /export/servers/nginx
+    rm -rf $1
 
-    mkdir -p /export/servers/nginx
-    mkdir -p /export/servers/nginx/run
+    mkdir -p $1
+    mkdir -p $1/run
 
-    cd /export/soft/nginx-1.15.12
+    cd nginx-1.15.12
     # 指定目录安装
-    ./configure --prefix=/export/servers/nginx --conf-path=/export/servers/nginx/conf/nginx.conf
+    ./configure --prefix=$1 --conf-path=$1/conf/nginx.conf
     make && make install
 
     # 拷贝配置
-    mv /export/servers/nginx/conf/nginx.conf /export/servers/nginx/conf/nginx.conf.default
-    cp ${project_path}/nginx.conf /export/servers/nginx/conf/nginx.conf
-    mkdir -p /export/servers/nginx/run
+    mv $1/conf/nginx.conf $1/conf/nginx.conf.default
+    cp ${project_path}/nginx.conf $1/conf/nginx.conf
+    mkdir -p $1/run
+    rm -rf nginx-1.15.12
     echo "nginx install end ……"
     echo "nginx init end ######"
 }
@@ -118,11 +117,11 @@ function main()
     echo "file and proc open number setting……"
     fileAndProcSetting
 
-    jdkSetting
+    jdk_install '/export/servers'
 
-    tomcatSetting
+    tomcat_install '/export/servers/tomcat8.0.30'
 
-    nginxSetting
+    nginx_install '/export/servers/nginx'
 
 
     chown -R admin:admin /export
