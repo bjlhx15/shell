@@ -38,7 +38,7 @@ function copy_tomcat_conf() {
         echo "copy ${project_path}/Catalina/localhost/ROOT.xml";
         mkdir -p ${catalina_base}/conf/Catalina/localhost
         cp -r ${project_path}/Catalina/localhost/ROOT.xml ${catalina_base}/conf/Catalina/localhost/ROOT.xml
-        sed -i "s#__doc_base_url_root__#${catalina_base}/webapps#g" ${tomcat_instance_path}/${tomcat_instance_format}${i}/conf/Catalina/localhost/ROOT.xml
+        sed -i "s#__doc_base_url_root__#${catalina_base}/webapps/#g" ${tomcat_instance_path}/${tomcat_instance_format}${i}/conf/Catalina/localhost/ROOT.xml
 
         echo "start port :${serverPortStart},stop port:${serverPortStop}"
     done
