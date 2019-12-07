@@ -1,6 +1,9 @@
 #!/bin/bash
 
 . /etc/init.d/functions
+
+cd "$(dirname $0)"/.. || exit 1
+
 export CATALINA_BASE="__CATALINA_BASE__"
 export CATALINA_HOME="__CATALINA_HOME__"
 
