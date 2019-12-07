@@ -54,7 +54,7 @@ function shell_setting() {
 function tomcat_control() {
     for (( i = 1; i <= ${tomcat_instance_number}; ++i )); do
         catalina_base=${tomcat_instance_path}/${tomcat_instance_format}${i}
-        cp -r ${project_path}/index_template.html ${catalina_base}/webapps/index_template.html
+        cp -r ${project_path}/index_template.html ${catalina_base}/webapps/index.html
 
         str=`echo ${tomcat_instance_format}${i}`
         sed -i "s#__index__template__#${str}#g" ${catalina_base}/webapps/index.html
