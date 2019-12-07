@@ -44,8 +44,10 @@ function shell_setting() {
         echo "mkdir -p ${catalina_base}/bin";
         sudo mkdir -p ${catalina_base}/bin
         cp -r ${project_path}/tomcat_control_template.sh ${catalina_base}/bin/control.sh
-        sed -i "s/__CATALINA_BASE__/${catalina_base}/g" ${catalina_base}/bin/control.sh
-        sed -i "s/__CATALINA_HOME__/${CATALINA_HOME}/g" ${catalina_base}/bin/control.sh
+        catalina_base_str=`echo ${catalina_base}`
+        CATALINA_HOME_str=`echo ${CATALINA_HOME}`
+        sed -i "s/__CATALINA_BASE__/${catalina_base_str}/g" ${catalina_base}/bin/control.sh
+        sed -i "s/__CATALINA_HOME__/${CATALINA_HOME_str}/g" ${catalina_base}/bin/control.sh
     done
 }
 
@@ -53,7 +55,9 @@ function tomcat_control() {
     for (( i = 1; i <= ${tomcat_instance_number}; ++i )); do
         catalina_base=${tomcat_instance_path}/${tomcat_instance_format}${i}
         cp -r ${project_path}/index_template.html ${catalina_base}/webapps/index_template.html
-        sed -i "s/__index__template__/${tomcat_instance_format}${i}/g" ${catalina_base}/webapps/index_template.html
+
+        str=`echo ${tomcat_instance_format}${i}`
+        sed -i "s/__index__template__/${str}/g" ${catalina_base}/webapps/index_template.html
         ${catalina_base}/bin/control.sh start
     done
 }
