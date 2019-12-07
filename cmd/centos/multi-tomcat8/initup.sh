@@ -57,7 +57,8 @@ function tomcat_control() {
         cp -r ${project_path}/index_template.html ${catalina_base}/webapps/index_template.html
 
         str=`echo ${tomcat_instance_format}${i}`
-        sed -i "s#__index__template__#${str}#g" ${catalina_base}/webapps/index_template.html
+        sed -i "s#__index__template__#${str}#g" ${catalina_base}/webapps/index.html
+        chmod 777 ${catalina_base}/bin/control.sh
         ${catalina_base}/bin/control.sh start
     done
 }
