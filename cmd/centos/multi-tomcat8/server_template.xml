@@ -22,7 +22,7 @@
 
             <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
                    resourceName="UserDatabase"/>
-            <Host name="localhost" appBase=""
+            <Host name="localhost" appBase="__app_base__"
                   unpackWARs="false" autoDeploy="false"
                   xmlValidation="false" xmlNamespaceAware="false">
 <!--                <Context path="/" docBase="" debug="0" reloadable="true" crossContext="true"/>-->
