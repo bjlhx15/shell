@@ -13,9 +13,11 @@ start)
         ;;
 stop)
         $CATALINA_HOME/bin/shutdown.sh
+        pkill -f tomcat
         ;;
 restart)
         $CATALINA_HOME/bin/shutdown.sh
+        pkill -f tomcat
         sleep 5
         $CATALINA_HOME/bin/startup.sh
         ;;
