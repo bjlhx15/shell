@@ -10,7 +10,9 @@ export JAVA_OPTS="-Xms1024m -Xmx1024m -Dfile.encoding=UTF-8 -Des.set.netty.runti
 
 
 function tomcat_control() {
-    source stop.sh
+    if [ 1 == 1 ]; then
+        source stop.sh
+    fi
     rm -rf ${tomcat_instance_path}/*
 }
 
