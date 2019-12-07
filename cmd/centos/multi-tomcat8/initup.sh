@@ -29,12 +29,14 @@ function copy_tomcat_conf() {
         echo "copy conf/server.xml";
         serverPortStart="160${i}"
         serverPortStop="800${i}"
-        mv ${tomcat_instance_path}/${tomcat_instance_format}${i}/conf/server.xml ${tomcat_instance_path}/${tomcat_instance_format}${i}/conf/server.xml.bak
-        cp -r ${project_path}/server_template.xml ${tomcat_instance_path}/${tomcat_instance_format}${i}/conf/server.xml
-        cp -r ${project_path}/Catalina/localhost/ROOT.xml ${tomcat_instance_path}/${tomcat_instance_format}${i}/conf/Catalina/localhost/ROOT.xml
+        mv ${catalina_base}/conf/server.xml ${catalina_base}/conf/server.xml.bak
+        cp -r ${project_path}/server_template.xml ${catalina_base}/conf/server.xml
         # 环境变量替换
         sed -i "s#server_port_start#${serverPortStart}#g" ${tomcat_instance_path}/${tomcat_instance_format}${i}/conf/server.xml
         sed -i "s#server_port_stop#${serverPortStop}#g" ${tomcat_instance_path}/${tomcat_instance_format}${i}/conf/server.xml
+
+        echo "copy ${project_path}/Catalina/localhost/ROOT.xml";
+        cp -r ${project_path}/Catalina/localhost/ROOT.xml ${catalina_base}/conf/Catalina/localhost/ROOT.xml
         sed -i "s#__doc_base_url_root__#${catalina_base}/webapps#g" ${tomcat_instance_path}/${tomcat_instance_format}${i}/conf/Catalina/localhost/ROOT.xml
 
         echo "start port :${serverPortStart},stop port:${serverPortStop}"
