@@ -13,7 +13,7 @@ function version_check() {
 
         case $input in
             [yY][eE][sS]|[yY])
-                echo "存在，继续安装"
+                echo "存在，继续安装，请先清理原冲突配置"
                 return 0
                 ;;
 
@@ -55,7 +55,7 @@ function jdk_install() {
     tar -zvxf ${jdk_tar_name}
     jdk_name=`echo jdk*_*`
     rm -rf ${jdk_server}/${jdk_name}
-    mv ${jdk_name} ${jdk_dir}/${jdk_name}
+    mv ${jdk_name} ${jdk_server}/${jdk_name}
     echo "jdk install end ……"
 
     echo "jdk profile start ……"
@@ -79,13 +79,13 @@ function main()
     version_check
 
     retval=$?
-    echo ${retval}
+#    echo ${retval}
     # 安装
     if [ ${retval} == 0 ]; then
-        echo '安装开始1'
+        echo '安装开始……'
         jdk_install
     else
-        echo '不安装'
+        echo '不安装……'
 
     fi
 
