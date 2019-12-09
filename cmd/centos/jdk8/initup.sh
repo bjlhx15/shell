@@ -83,7 +83,7 @@ function main()
     # 安装
     if [ ${retval} == 0 ]; then
         echo '安装开始1'
-#        jdk_install
+        jdk_install
     else
         echo '不安装'
 
