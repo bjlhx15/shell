@@ -6,6 +6,7 @@ cd "$(dirname $0)"/.. || exit 1
 
 
 #JAVA_OPTS参数根据需要添加，尤其是内存相关参数，并且注意这里的设置会覆盖分组设置中的同名值
+# -Djava.security.egd=file:/dev/./urandom  否则启动超级慢
 export JAVA_OPTS="-Xms1024m -Xmx1024m \
  -Djava.security.egd=file:/dev/./urandom -Dfile.encoding=UTF-8 -Des.set.netty.runtime.available.processors=false"
 
