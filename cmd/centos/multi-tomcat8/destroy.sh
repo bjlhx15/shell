@@ -13,11 +13,12 @@ function tomcat_control() {
     if [ 1 == 1 ]; then
         source stop.sh
     fi
-    rm -rf ${tomcat_instance_path}/*
 }
 
 function main()
 {
     tomcat_control
+
+    rm -rf ${tomcat_instance_path}/*
 }
 main $@
