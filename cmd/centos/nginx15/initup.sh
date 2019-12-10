@@ -8,7 +8,8 @@ function nginx_install() {
     echo "nginx init start ######"
     source env-conf.sh
     project_path=$(cd `dirname $0`; pwd)
-    pnginx=$(cd `dirname ${project_path}`; pwd)+"/nginx15"
+    pnginx=$(cd `dirname ${project_path}`; pwd)
+    pnginx=${pnginx}+'/nginx15'
     echo "project_path:${project_path}"
     echo "pnginx:${pnginx}"
 
