@@ -5,6 +5,7 @@ source env-conf.sh
 
 #exit;
 project_path=$(cd `dirname $0`; pwd)
+echo "当前目录：${project_path}"
 
 function fileAndProcSetting(){
     if [ `grep -c '* soft nofile 65535' /etc/security/limits.conf` -eq 0 ];then
@@ -120,14 +121,11 @@ function nginx_install() {
 function main()
 {
     echo "install starting……"
-    cd ${project_path}/../
-    source open-port/initup.sh
-    cd ${project_path}/../
-    source jdk8/initup.sh
-    cd ${project_path}/../
-    source nginx15/initup.sh
-    cd ${project_path}/../
-    source tomcat8/initup.sh
+    pp=$(cd `dirname ${project_path}`; pwd)
+    source ${pp}/open-port/initup.sh
+    source ${pp}/jdk8/initup.sh
+    source ${pp}/nginx15/initup.sh
+    source ${pp}/tomcat8/initup.sh
 
     echo "install cpmleted ……"
 }
