@@ -7,8 +7,10 @@ function nginx_install() {
     useradd admin
     echo "nginx init start ######"
     source env-conf.sh
-    project_path_nginx=$(cd `dirname $0`; pwd)
-    echo "project_path_nginx:${project_path_nginx}"
+    project_path=$(cd `dirname $0`; pwd)
+    pnginx=$(cd `dirname ${project_path}`; pwd)+"/nginx15"
+    echo "project_path:${project_path}"
+    echo "pnginx:${pnginx}"
 
     mkdir -p ${soft_path}
     cd ${soft_path}
@@ -38,7 +40,7 @@ function nginx_install() {
 
     # 拷贝配置
     mv ${nginx_server}/conf/nginx.conf ${nginx_server}/conf/nginx.conf.default
-    cp ${project_path_nginx}/nginx.conf ${nginx_server}/conf/nginx.conf
+    cp ${pnginx}/nginx.conf ${nginx_server}/conf/nginx.conf
     mkdir -p ${nginx_server}/run
     rm -rf nginx-1.15.12
     echo "nginx install end ……"
@@ -48,7 +50,7 @@ function nginx_install() {
     chmod 755 ${nginx_server}/sbin/nginx
     chmod u+s ${nginx_server}/sbin/nginx
     echo "nginx init end ######"
-    cd ${project_path_nginx}
+    cd ${project_path}
 }
 
 

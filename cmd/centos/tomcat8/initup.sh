@@ -9,6 +9,7 @@ CATALINA_HOME=${tomcat8_server_path}
 function tomcat_install() {
     mkdir -p ${soft_path}
     echo "tomcat8 init start ######"
+    project_path=$(cd `dirname $0`; pwd)
     if [ -e apache-tomcat-8.0.30.tar.gz ] ; then
         echo 'exist apache-tomcat-8.0.30.tar.gz'
     else
@@ -23,6 +24,7 @@ function tomcat_install() {
     mv apache-tomcat-8.0.30 ${tomcat8_server_path}
     echo "tomcat8 install end ……"
     echo "tomcat8 init end ######"
+    cd ${project_path}
 }
 
 function main()
