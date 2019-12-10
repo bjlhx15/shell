@@ -3,7 +3,7 @@
 # 导入配置
 source env-conf.sh
 
-exit;
+#exit;
 project_path=$(cd `dirname $0`; pwd)
 
 function fileAndProcSetting(){
