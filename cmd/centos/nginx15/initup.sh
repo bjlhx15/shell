@@ -1,13 +1,15 @@
 #!/bin/bash
 
 # 导入配置
-source env-conf.sh
-project_path_nginx=$(cd `dirname $0`; pwd)
 
 
 function nginx_install() {
     useradd admin
     echo "nginx init start ######"
+    source env-conf.sh
+    project_path_nginx=$(cd `dirname $0`; pwd)
+    echo "project_path_nginx:${project_path_nginx}"
+    
     mkdir -p ${soft_path}
     cd ${soft_path}
     if [ -e nginx-1.15.12.tar.gz ]; then
