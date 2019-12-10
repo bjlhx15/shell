@@ -29,9 +29,9 @@ function nginx_install() {
     mkdir -p ${nginx_server}
     mkdir -p ${nginx_server}/run
 
-    cd nginx-1.15.12
+    cd ${soft_path}/nginx-1.15.12
     # 指定目录安装
-    ./configure --prefix=$1 --conf-path=${nginx_server}/conf/nginx.conf
+    ./configure --prefix=${nginx_server} --conf-path=${nginx_server}/conf/nginx.conf
     make && make install
 
     # 拷贝配置
