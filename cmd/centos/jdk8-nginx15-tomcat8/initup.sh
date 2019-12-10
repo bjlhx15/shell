@@ -5,7 +5,7 @@ source env-conf.sh
 
 #exit;
 project_path_jdk8=$(cd `dirname $0`; pwd)
-echo "当前目录：${project_path}"
+echo "当前目录：${project_path_jdk8}"
 
 function fileAndProcSetting(){
     if [ `grep -c '* soft nofile 65535' /etc/security/limits.conf` -eq 0 ];then
@@ -121,7 +121,7 @@ function nginx_install() {
 function main()
 {
     echo "install starting……"
-    pp=$(cd `dirname ${project_path}`; pwd)
+    pp=$(cd `dirname ${project_path_jdk8}`; pwd)
     source ${pp}/open-port/initup.sh
     source ${pp}/jdk8/initup.sh
     source ${pp}/nginx15/initup.sh
