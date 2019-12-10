@@ -121,13 +121,13 @@ function main()
 {
     echo "install starting……"
     cd ${project_path}/../
-    source ./open-port/initup.sh
+    source open-port/initup.sh
     cd ${project_path}/../
-    source ./jdk8/initup.sh
+    source jdk8/initup.sh
     cd ${project_path}/../
-    source ./nginx15/initup.sh
+    source nginx15/initup.sh
     cd ${project_path}/../
-    source ./tomcat8/initup.sh
+    source tomcat8/initup.sh
 
     echo "install cpmleted ……"
 }
