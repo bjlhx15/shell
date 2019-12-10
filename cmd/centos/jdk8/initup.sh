@@ -44,7 +44,7 @@ function jdk_install() {
         echo 'no exist jdk-*.tar.gz'
         echo `请将 jdk-*.tar.gz 上传至 ${jdk_path} 上`
         echo "请将 本地 jdk 上传服务器目录下并配置，如 jdk-8u231-linux-x64.tar.gz ,jdk 格式 jdk-*.tar.gz"
-        echo "本地上传至远端 scp /Users/lihongxu6/Downloads/jdk-8u231-linux-x64.tar.gz root@192.168.120.204:/export/soft/"
+        echo "本地上传至远端 scp /Users/lihongxu6/Downloads/jdk-8u231-linux-x64.tar.gz root@192.168.120.204:${soft_path}"
         exit 0;
     fi
     echo "jdk download end ……"
@@ -61,10 +61,9 @@ function jdk_install() {
     echo "jdk profile start ……"
     if [ `grep -c 'export JAVA_HOME=/export/servers' /etc/profile` -eq 0 ];then
         echo 'not have'
-        echo -e "\n\nexport JAVA_HOME=/export/servers/${jdk_name}"+'
-    export CLASSPATH=.:${JAVA_HOME}/jre/lib/rt.jar:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar
-    export PATH=$PATH:${JAVA_HOME}/bin' >>/etc/profile
+        echo -e "\n\nexport JAVA_HOME=/export/servers/${jdk_name}"+'\nexport CLASSPATH=.:${JAVA_HOME}/jre/lib/rt.jar:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar\nexport PATH=$PATH:${JAVA_HOME}/bin' >>/etc/profile
         source /etc/profile
+        java -version
     else
         echo 'have jdk setting'
     fi

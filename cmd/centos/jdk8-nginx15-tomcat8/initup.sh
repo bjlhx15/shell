@@ -2,6 +2,8 @@
 
 # 导入配置
 source env-conf.sh
+
+exit;
 project_path=$(cd `dirname $0`; pwd)
 
 function fileAndProcSetting(){
@@ -117,18 +119,12 @@ function nginx_install() {
 
 function main()
 {
-    echo "soft and server filepath creating ……"
-    dirCreate
+    echo "install starting……"
 
-    echo "file and proc open number setting……"
-    fileAndProcSetting
-
-    jdk_install '/export/servers'
-
-    tomcat_install '/export/servers/tomcat8.0.30'
-
-    nginx_install '/export/servers/nginx'
-
+    source ../open-port/initup.sh
+    source ../jdk8/initup.sh
+    source ../nginx15/initup.sh
+    source ../tomcat8/initup.sh
 
     echo "install cpmleted ……"
 }
