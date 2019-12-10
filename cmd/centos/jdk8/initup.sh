@@ -61,12 +61,12 @@ function jdk_install() {
     echo "jdk profile start ……"
     if [ `grep -c 'export JAVA_HOME=/export/servers' /etc/profile` -eq 0 ];then
         echo 'not have'
-        echo -e "\n\nexport JAVA_HOME=/export/servers/${jdk_name}"+'\nexport CLASSPATH=.:${JAVA_HOME}/jre/lib/rt.jar:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar\nexport PATH=$PATH:${JAVA_HOME}/bin' >>/etc/profile
-        source /etc/profile
-        java -version
+        echo -e "\n\nexport JAVA_HOME=/export/servers/${jdk_name}" '\nexport CLASSPATH=.:${JAVA_HOME}/jre/lib/rt.jar:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar\nexport PATH=$PATH:${JAVA_HOME}/bin' >>/etc/profile
     else
         echo 'have jdk setting'
     fi
+    source /etc/profile
+    java -version
     echo "jdk profile end ……"
     echo "jdk init end ######"
 }

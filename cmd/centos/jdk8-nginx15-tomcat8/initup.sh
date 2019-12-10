@@ -120,11 +120,14 @@ function nginx_install() {
 function main()
 {
     echo "install starting……"
-
-    source ${project_path}/../open-port/initup.sh
-    source ${project_path}/../jdk8/initup.sh
-    source ${project_path}/../nginx15/initup.sh
-    source ${project_path}/../tomcat8/initup.sh
+    cd ${project_path}/../
+    source ./open-port/initup.sh
+    cd ${project_path}/../
+    source ./jdk8/initup.sh
+    cd ${project_path}/../
+    source ./nginx15/initup.sh
+    cd ${project_path}/../
+    source ./tomcat8/initup.sh
 
     echo "install cpmleted ……"
 }
