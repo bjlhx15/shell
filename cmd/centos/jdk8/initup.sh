@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# 导入配置
-source env-conf.sh
-project_path=$(cd `dirname $0`; pwd)
 
 function version_check() {
     #JAVA_VERSION=$JAVA_HOME | awk -F"/" '{print $4}' 或者
@@ -32,6 +29,12 @@ function version_check() {
 }
 
 function jdk_install() {
+
+    # 导入配置
+    source env-conf.sh
+    project_path=$(cd `dirname $0`; pwd)
+    echo "project_path:${project_path}"
+
     mkdir -p ${jdk_server}
     jdk_dir=$(dirname ${jdk_path})
     cd ${jdk_dir}
@@ -69,6 +72,7 @@ function jdk_install() {
     java -version
     echo "jdk profile end ……"
     echo "jdk init end ######"
+    cd ${project_path}
 }
 
 

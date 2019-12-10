@@ -9,7 +9,7 @@ function nginx_install() {
     source env-conf.sh
     project_path_nginx=$(cd `dirname $0`; pwd)
     echo "project_path_nginx:${project_path_nginx}"
-    
+
     mkdir -p ${soft_path}
     cd ${soft_path}
     if [ -e nginx-1.15.12.tar.gz ]; then
@@ -48,6 +48,7 @@ function nginx_install() {
     chmod 755 ${nginx_server}/sbin/nginx
     chmod u+s ${nginx_server}/sbin/nginx
     echo "nginx init end ######"
+    cd ${project_path_nginx}
 }
 
 
