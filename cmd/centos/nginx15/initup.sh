@@ -2,7 +2,7 @@
 
 # 导入配置
 source env-conf.sh
-project_path=$(cd `dirname $0`; pwd)
+project_path_nginx=$(cd `dirname $0`; pwd)
 
 
 function nginx_install() {
@@ -36,7 +36,7 @@ function nginx_install() {
 
     # 拷贝配置
     mv ${nginx_server}/conf/nginx.conf ${nginx_server}/conf/nginx.conf.default
-    cp ${project_path}/nginx.conf ${nginx_server}/conf/nginx.conf
+    cp ${project_path_nginx}/nginx.conf ${nginx_server}/conf/nginx.conf
     mkdir -p ${nginx_server}/run
     rm -rf nginx-1.15.12
     echo "nginx install end ……"

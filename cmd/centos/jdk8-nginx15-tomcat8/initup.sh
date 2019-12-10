@@ -4,7 +4,7 @@
 source env-conf.sh
 
 #exit;
-project_path=$(cd `dirname $0`; pwd)
+project_path_jdk8=$(cd `dirname $0`; pwd)
 echo "当前目录：${project_path}"
 
 function fileAndProcSetting(){
