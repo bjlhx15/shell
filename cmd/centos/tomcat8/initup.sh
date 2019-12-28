@@ -22,6 +22,9 @@ function tomcat_install() {
     tar -zvxf apache-tomcat-8.0.30.tar.gz
     rm -rf ${tomcat8_server_path}
     mv apache-tomcat-8.0.30 ${tomcat8_server_path}
+
+    chown -R admin:admin /export/servers/tomcat8.0.30
+    chmod -R 777 /export/servers/tomcat8.0.30
     echo "tomcat8 install end ……"
     echo "tomcat8 init end ######"
     cd ${project_path}

@@ -55,6 +55,7 @@ function jdk_install() {
     echo "jdk install start ……"
 
     jdk_tar_name=`echo jdk-*.tar.gz`
+    yum install -y tar
     tar -zvxf ${jdk_tar_name}
     jdk_name=`echo jdk*_*`
     rm -rf ${jdk_server}/${jdk_name}
