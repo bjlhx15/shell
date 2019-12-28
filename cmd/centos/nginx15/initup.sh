@@ -18,6 +18,7 @@ function nginx_install() {
         echo "exist nginx-1.15.12.tar.gz"
     else
         echo "nginx download start ……"
+        yum install -y wget
         wget http://nginx.org/download/nginx-1.15.12.tar.gz
         echo "nginx download end ……"
     fi
