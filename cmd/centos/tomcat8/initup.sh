@@ -8,7 +8,7 @@ CATALINA_HOME=${tomcat8_server_path}
 
 function tomcat_install() {
     mkdir -p ${soft_path}
-    cd soft_path
+    cd ${soft_path}
     echo "tomcat8 init start ######"
     project_path=$(cd `dirname $0`; pwd)
     echo "project_path:${project_path}"
