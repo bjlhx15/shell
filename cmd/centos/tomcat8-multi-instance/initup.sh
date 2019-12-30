@@ -10,7 +10,7 @@ function create_dir(){
     for (( i = 1; i <= ${tomcat_instance_number}; ++i )); do
         catalina_base=${tomcat_instance_path}/${tomcat_instance_format}${i}
         echo "mkdir -p ${catalina_base}";
-        sudo mkdir -p ${catalina_base}
+        mkdir -p ${catalina_base}
     done
 }
 

@@ -29,6 +29,7 @@ echo "git安装：git install -y git"
 echo "cd /export"
 echo "git clone https://github.com/bjlhx15/shell.git"
 echo "如果报错：yum -y update"
+echo "运行 安装 jdk等命令即可"
 
 docker exec -it ${name} /bin/bash
 

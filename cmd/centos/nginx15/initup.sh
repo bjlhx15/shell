@@ -18,7 +18,6 @@ function nginx_install() {
         echo "exist nginx-1.15.12.tar.gz"
     else
         echo "nginx download start ……"
-        yum install -y wget
         wget http://nginx.org/download/nginx-1.15.12.tar.gz
         echo "nginx download end ……"
     fi
@@ -43,6 +42,7 @@ function nginx_install() {
     mv ${nginx_server}/conf/nginx.conf ${nginx_server}/conf/nginx.conf.default
     cp ${pnginx}/nginx.conf ${nginx_server}/conf/nginx.conf
     mkdir -p ${nginx_server}/run
+    cd ${soft_path}
     rm -rf nginx-1.15.12
     echo "nginx install end ……"
     chown -R admin:admin /export
