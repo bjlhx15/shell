@@ -46,7 +46,7 @@ function shell_setting() {
     for (( i = 1; i <= ${tomcat_instance_number}; ++i )); do
         catalina_base=${tomcat_instance_path}/${tomcat_instance_format}${i}
         echo "mkdir -p ${catalina_base}/bin";
-        sudo mkdir -p ${catalina_base}/bin
+        mkdir -p ${catalina_base}/bin
         cp -r ${project_path}/tomcat_control_template.sh ${catalina_base}/bin/control.sh
         catalina_base_str=`echo ${catalina_base}`
         CATALINA_HOME_str=`echo ${CATALINA_HOME}`
