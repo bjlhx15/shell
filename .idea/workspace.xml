@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9650a717-da2a-40a1-b234-5a2fb2358419" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/cmd/centos/tomcat8/initup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/centos/tomcat8/initup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/env-conf.sh" beforeDir="false" afterPath="$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/env-conf.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/tomcat_control_template.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/tomcat_control_template.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/initup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/initup.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/centos74-jdk8-nginx152-tomcat8/env-conf.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/centos74-jdk8-nginx152-tomcat8/initup.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/centos74-jdk8-nginx152-tomcat8/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/centos66-jdk8-nginx152-tomcat8/env-conf.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/centos66-jdk8-nginx152-tomcat8/initup.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/centos66-jdk8-nginx152-tomcat8/readme.md" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,82 +20,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker/centos66-jdk8-nginx152-tomcat8/initup.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/Catalina/localhost/ROOT.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/initup.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/index_template.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/env-conf.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <entry file="file://$PROJECT_DIR$/docker/redis/mac/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor>
+                <markdownNavigatorState />
+              </second_editor>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8/initup.sh">
+        <entry file="file://$PROJECT_DIR$/docker/redis/mac/initup.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/env-conf.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/initup.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8/env-conf.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="9" selection-start-line="4" selection-end-line="4" selection-end-column="9" />
+            <state relative-caret-position="181">
+              <caret line="56" selection-start-line="56" selection-end-line="56" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -164,13 +103,14 @@
         <option value="$PROJECT_DIR$/docker/centos66-jdk8-nginx152-tomcat8/initup.sh" />
         <option value="$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/initup.sh" />
         <option value="$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/env-conf.sh" />
-        <option value="$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/initup.sh" />
         <option value="$PROJECT_DIR$/cmd/centos/tomcat8/initup.sh" />
+        <option value="$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/initup.sh" />
+        <option value="$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/tomcat_control_template.sh" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="817" />
+    <option name="x" value="-168" />
     <option name="y" value="-1080" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
@@ -181,6 +121,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -196,39 +137,25 @@
             <path>
               <item name="shell" type="b2602c69:ProjectViewProjectNode" />
               <item name="shell" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-              <item name="centos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shell" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shell" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-              <item name="centos" type="462c0819:PsiDirectoryNode" />
-              <item name="jdk8-nginx15-tomcat8" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shell" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shell" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-              <item name="centos" type="462c0819:PsiDirectoryNode" />
-              <item name="tomcat8" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shell" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shell" type="462c0819:PsiDirectoryNode" />
               <item name="docker" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="shell" type="b2602c69:ProjectViewProjectNode" />
               <item name="shell" type="462c0819:PsiDirectoryNode" />
               <item name="docker" type="462c0819:PsiDirectoryNode" />
-              <item name="centos-jdk8-nginx152-tomcat8" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="shell" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shell" type="462c0819:PsiDirectoryNode" />
+              <item name="docker" type="462c0819:PsiDirectoryNode" />
+              <item name="redis" type="462c0819:PsiDirectoryNode" />
+              <item name="mac" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -279,14 +206,10 @@
       <workItem from="1577408610927" duration="13000" />
       <workItem from="1577431155185" duration="850000" />
       <workItem from="1577433117981" duration="18451000" />
-      <workItem from="1577666084487" duration="2862000" />
-    </task>
-    <task id="LOCAL-00008" summary="bash">
-      <created>1575599307529</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1575599307529</updated>
+      <workItem from="1577666084487" duration="4567000" />
+      <workItem from="1580216177935" duration="269000" />
+      <workItem from="1580292013224" duration="183000" />
+      <workItem from="1581069052020" duration="519000" />
     </task>
     <task id="LOCAL-00009" summary="bash">
       <created>1575608593169</created>
@@ -624,16 +547,23 @@
       <option name="project" value="LOCAL" />
       <updated>1577668039842</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="bash">
+      <created>1577668971821</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1577668971821</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94018000" />
+    <option name="totallyTimeSpent" value="96694000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="817" y="-1080" width="1920" height="1080" extended-state="0" />
+    <frame x="-168" y="-1080" width="1920" height="1080" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.254818" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2649893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -647,7 +577,7 @@
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49946466" visible="true" weight="0.35343036" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49946466" visible="true" weight="0.35343036" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5005353" side_tool="true" weight="0.28586277" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" />
@@ -737,13 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/tomcat_control_template.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmd/centos/jdk8-nginx15-tomcat8/test.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -765,16 +688,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker/centos74-jdk8-nginx152-tomcat8/readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="4" selection-start-column="4" selection-end-column="4" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/centos74-jdk8-nginx152-tomcat8/readme.md" />
     <entry file="file://$PROJECT_DIR$/cmd/centos/open-port/initup.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -782,27 +696,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker/redis/mac/initup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="68" column="57" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker/centos74-jdk8-nginx152-tomcat8/initup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker/centos74-jdk8-nginx152-tomcat8/env-conf.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/centos74-jdk8-nginx152-tomcat8/initup.sh" />
+    <entry file="file://$PROJECT_DIR$/docker/centos74-jdk8-nginx152-tomcat8/env-conf.sh" />
     <entry file="file://$PROJECT_DIR$/cmd/centos/jdk8-nginx15-tomcat8/env-conf.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -817,13 +712,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker/centos66-jdk8-nginx152-tomcat8/env-conf.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/centos66-jdk8-nginx152-tomcat8/env-conf.sh" />
     <entry file="file://$PROJECT_DIR$/cmd/centos/jdk8/destroy.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -852,52 +741,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docker/centos66-jdk8-nginx152-tomcat8/initup.sh">
+    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8/initup.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/Catalina/localhost/ROOT.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/initup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/index_template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/env-conf.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/env-conf.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/initup.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="35" column="33" lean-forward="true" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state relative-caret-position="252">
+          <caret line="15" column="48" lean-forward="true" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -908,10 +755,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8/initup.sh">
+    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/tomcat_control_template.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        <state relative-caret-position="38">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/initup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/initup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/centos-jdk8-nginx152-tomcat8/env-conf.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/env-conf.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/index_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/centos/tomcat8-multi-instance/Catalina/localhost/ROOT.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="10" lean-forward="true" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/centos66-jdk8-nginx152-tomcat8/initup.sh" />
+    <entry file="file://$PROJECT_DIR$/docker/redis/mac/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker/redis/mac/initup.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="56" selection-start-line="56" selection-end-line="56" selection-end-column="17" />
         </state>
       </provider>
     </entry>

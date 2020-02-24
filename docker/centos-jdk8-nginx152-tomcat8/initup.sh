@@ -31,7 +31,7 @@ echo "git clone https://github.com/bjlhx15/shell.git"
 echo "centos6.6 如果报错：yum -y update "
 echo "运行 安装 jdk等命令即可:cd /export/shell/cmd/centos/jdk8-nginx15-tomcat8/  "
 echo "运行 安装 jdk等命令即可:./initup.sh  "
-echo "tomcat 实例:/export/shell/cmd/centos/tomcat8-multi-instance/  "
+echo "tomcat 实例:cd /export/shell/cmd/centos/tomcat8-multi-instance/  "
 
 docker exec -it ${name} /bin/bash
 

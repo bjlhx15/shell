@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /etc/profile
+
 . /etc/init.d/functions
 
 cd "$(dirname $0)"/.. || exit 1
