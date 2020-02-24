@@ -71,7 +71,7 @@ for port in `seq ${redis_port_range}`; do \
   execsh=${execsh}`docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' redis-${port}`:${port}' '
 done
 
-execsh=${execsh}'--cluster-replicas 1'
+execsh="${execsh} -a ${redis_password} --cluster-replicas 1"
 
 #将拼接好的命令打印到控制台
 echo ${execsh}
