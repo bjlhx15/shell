@@ -16,3 +16,7 @@ cluster-announce-port ${PORT}
 cluster-announce-bus-port 1${PORT}
 # 持久化模式
 appendonly yes
+
+#集群加密
+masterauth ${redis_password} 
+requirepass ${redis_password} 
