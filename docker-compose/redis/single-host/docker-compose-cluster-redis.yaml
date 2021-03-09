@@ -1,0 +1,130 @@
+version: '3'
+
+networks:
+  jzktest:
+    external: true
+
+
+services:
+
+  redis-master1:
+    container_name: redis-master1
+    image: redis:4.0.13-ruby
+    restart: unless-stopped
+    hostname: redis-master1
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 6379:6379
+      - 16379:16379
+    command:
+      - "redis-server"
+      - "/home/redis/cluster/redis.conf"
+    volumes:
+      - ./image/redis-trib.rb:/usr/bin/redis-trib.rb
+      - ./image/redis-master1.conf:/home/redis/cluster/redis.conf
+      - /data/redisdata/redis-master1:/data
+    networks:
+      - jzktest
+
+  redis-master2:
+    container_name: redis-master2
+    image: redis:4.0.13-ruby
+    restart: unless-stopped
+    hostname: redis-master2
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 6380:6379
+      - 16380:16379
+    command:
+      - "redis-server"
+      - "/home/redis/cluster/redis.conf"
+    volumes:
+      - ./image/redis-trib.rb:/usr/bin/redis-trib.rb
+      - ./image/redis-master2.conf:/home/redis/cluster/redis.conf
+      - /data/redisdata/redis-master2:/data
+    networks:
+      - jzktest
+
+  redis-master3:
+    container_name: redis-master3
+    image: redis:4.0.13-ruby
+    restart: unless-stopped
+    hostname: redis-master3
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 6381:6379
+      - 16381:16379
+    command:
+      - "redis-server"
+      - "/home/redis/cluster/redis.conf"
+    volumes:
+      - ./image/redis-trib.rb:/usr/bin/redis-trib.rb
+      - ./image/redis-master3.conf:/home/redis/cluster/redis.conf
+      - /data/redisdata/redis-master3:/data
+    networks:
+      - jzktest
+
+
+  redis-slave1:
+    container_name: redis-slave1
+    image: redis:4.0.13-ruby
+    restart: unless-stopped
+    hostname: redis-slave1
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 6382:6379
+      - 16382:16379
+    command:
+      - "redis-server"
+      - "/home/redis/cluster/redis.conf"
+    volumes:
+      - ./image/redis-trib.rb:/usr/bin/redis-trib.rb
+      - ./image/redis-slave1.conf:/home/redis/cluster/redis.conf
+      - /data/redisdata/redis-slave1:/data
+    networks:
+      - jzktest
+
+  redis-slave2:
+    container_name: redis-slave2
+    image: redis:4.0.13-ruby
+    restart: unless-stopped
+    hostname: redis-slave2
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 6383:6379
+      - 16383:16379
+    command:
+      - "redis-server"
+      - "/home/redis/cluster/redis.conf"
+    volumes:
+      - ./image/redis-trib.rb:/usr/bin/redis-trib.rb
+      - ./image/redis-slave2.conf:/home/redis/cluster/redis.conf
+      - /data/redisdata/redis-slave2:/data
+    networks:
+      - jzktest
+
+
+  redis-slave3:
+    container_name: redis-slave3
+    image: redis:4.0.13-ruby
+    restart: unless-stopped
+    hostname: redis-slave3
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 6384:6379
+      - 16384:16379
+    command:
+      - "redis-server"
+      - "/home/redis/cluster/redis.conf"
+    volumes:
+      - ./image/redis-trib.rb:/usr/bin/redis-trib.rb
+      - ./image/redis-slave3.conf:/home/redis/cluster/redis.conf
+      - /data/redisdata/redis-slave3:/data
+    networks:
+      - jzktest

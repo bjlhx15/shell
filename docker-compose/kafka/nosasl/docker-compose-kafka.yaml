@@ -1,0 +1,50 @@
+version: '3'
+
+#networks:
+#  gaussdb:
+#    external: true
+
+services:
+
+  ##############################################################################################
+
+  zookeeper356:
+    image: zookeeper:3.5.6
+    container_name: zookeeper356
+    environment:
+      - ZOO_MY_ID=1
+      - ZOO_PORT=2181
+    ports:
+      - 2181:2181
+  #    networks:
+  #      - gaussdb
+
+  kafka212:
+    image: wurstmeister/kafka:2.12-2.4.0
+    container_name: kafka212
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_LISTENERS=INSIDE://:9092,OUTSIDE://:9094
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper356:2181
+      - KAFKA_HEAP_OPTS=-Xmx512M -Xms20M
+      - KAFKA_LOG_DIRS=/kafka/logs
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      - KAFKA_INTER_BROKER_LISTENER_NAME=INSIDE
+      - KAFKA_ADVERTISED_LISTENERS=INSIDE://:9092,OUTSIDE://114.67.241.39:9094
+    depends_on:
+      - zookeeper356
+    ports:
+      - 9092:9092
+      - 9094:9094
+#    networks:
+#      - gaussdb
+
+
+#  kafka-manager:
+#    image: sheepkiller/kafka-manager:alpine
+#    container_name: kafka-manager
+#    environment:
+#      - ZK_HOSTS=zookeeper.gaussdb:2181
+#      - KAFKA_BROKERS=kafka.gaussdb:9092
+#    ports:
+#      - 9000:9000

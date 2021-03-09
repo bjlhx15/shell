@@ -1,0 +1,73 @@
+version: '3'
+
+#networks:
+#  gaussdb:
+#    external: true
+
+services:
+
+  ##############################################################################################
+
+  zookeeper356:
+    image: zookeeper:3.5.6
+    container_name: zookeeper356
+    environment:
+      - ZOO_MY_ID=1
+      - ZOO_PORT=2181
+      - ZOO_TICK_TIME=2000
+      - ZOO_MAXCLIENTCNXNS:=0
+      - ZOO_AUTHPROVIDER.1=org.apache.zookeeper.server.auth.SASLAuthenticationProvider
+      - ZOO_REQUIRECLIENTAUTHSCHEME=sasl
+      - ZOO_ZOOKEEPER_SASL_CLIENT=TRUE
+      - ZOO_JAASLOGINRENEW=3600000
+      - ZOO_KAFKA_OPTS=-Djava.security.auth.login.config=/opt/kafka_2.12-2.4.0/config/zk_server_jaas.conf
+    volumes:
+      - ./zk_server_jaas.conf:/opt/kafka_2.12-2.4.0/config/zk_server_jaas.conf
+    ports:
+      - 2181:2181
+  #    networks:
+  #      - gaussdb
+
+  kafka212:
+    image: wurstmeister/kafka:2.12-2.4.0
+    container_name: kafka212
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_LISTENERS=INSIDE://:9092,SASL_PLAINTEXT://:9096
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper356:2181
+      - KAFKA_HEAP_OPTS=-Xmx512M -Xms20M
+      - KAFKA_LOG_DIRS=/kafka/logs
+      - KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS=0
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INSIDE:PLAINTEXT,SASL_PLAINTEXT:SASL_PLAINTEXT
+#      - KAFKA_INTER_BROKER_LISTENER_NAME=INSIDE
+      - KAFKA_ADVERTISED_LISTENERS=INSIDE://:9092,SASL_PLAINTEXT://114.67.241.39:9096
+      - KAFKA_SECURITY_INTER_BROKER_PROTOCOL=SASL_PLAINTEXT
+      - KAFKA_SASL_ENABLED_MECHANISMS=PLAIN
+      - KAFKA_SASL_MECHANISM_INTER_BROKER_PROTOCOL=PLAIN
+      - KAFKA_AUTHORIZER_CLASS_NAME=kafka.security.auth.SimpleAclAuthorizer
+      - KAFKA_OPTS=-Djava.security.auth.login.config=/opt/kafka_2.12-2.4.0/config/kafka_server_jaas.conf
+      - KAFKA_SUPER_USERS=User:admin
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
+      - KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1
+      #- KAFKA_ZOOKEEPER_SET_ACL=true
+    depends_on:
+      - zookeeper356
+    volumes:
+      - ./kafka_server_jaas.conf:/opt/kafka_2.12-2.4.0/config/kafka_server_jaas.conf
+      - ./kafka_client_jaas.conf:/opt/kafka_2.12-2.4.0/config/kafka_client_jaas.conf
+    ports:
+      - 9092:9092
+      - 9096:9096
+#    networks:
+#      - gaussdb
+
+
+#  kafka-manager:
+#    image: sheepkiller/kafka-manager:alpine
+#    container_name: kafka-manager
+#    environment:
+#      - ZK_HOSTS=zookeeper356:2181
+#      - KAFKA_BROKERS=kafka212:9092
+#    ports:
+#      - 9000:9000
